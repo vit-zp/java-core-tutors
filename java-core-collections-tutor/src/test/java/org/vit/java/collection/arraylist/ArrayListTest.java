@@ -3,6 +3,7 @@ package org.vit.java.collection.arraylist;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -26,5 +27,16 @@ public class ArrayListTest {
 
         assertThat(0, is(actualList.size()));
     }
+
+
+    @Test
+    public void shouldAddElementsToList() {
+        List<String> actualList = new ArrayList<>();
+        actualList.add("AAA");
+        actualList.add("BBB");
+        assertThat(2, is(actualList.size()));
+        assertThat(Arrays.asList("AAA", "BBB"), is(actualList));
+    }
+
 
 }
